@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        CurrentSpeed = isSprint && canRun && IsGrounded ? runSpeed : walkSpeed;
+        CurrentSpeed = isSprint && canRun ? runSpeed : walkSpeed;
         CurrentSpeed *= !IsGrounded ? controlInAirMultiplier : 1f;
         rb.velocity = new Vector2(horizontalMove * CurrentSpeed, rb.velocity.y);
     }
