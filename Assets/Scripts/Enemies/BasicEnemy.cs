@@ -21,8 +21,9 @@ public class BasicEnemy : MonoBehaviour
             {
                 if (point.normal.y < 0)
                 {
-                    PlayerController.CurrentPlayer.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * 30f, ForceMode2D.Impulse);
-
+                    Rigidbody2D rb = PlayerController.CurrentPlayer.GetComponent<Rigidbody2D>(); 
+                    rb.velocity = new Vector2(0, 0);
+                    rb.AddForce(new Vector2(0, 1) * 30f, ForceMode2D.Impulse);
                     if(!canBouncePlayer)
                     {
                         PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage);
