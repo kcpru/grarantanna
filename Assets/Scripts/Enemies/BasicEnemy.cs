@@ -13,7 +13,21 @@ public class BasicEnemy : MonoBehaviour
     [Header("Damage")]
     public int damage = 2;
 
+
     void OnCollisionEnter2D(Collision2D col)
+    {
+        EveryCollision(col);
+    }
+    
+    void OnCollisionStay2D(Collision2D col)
+    {
+        EveryCollision(col);
+    }
+
+    ///<summary>
+    ///Should be called in OnCollisionEnter and OnCollisionStay
+    ///</summary>
+    private void EveryCollision(Collision2D col) 
     {
         if(col.collider.CompareTag("Player"))
         {
@@ -36,6 +50,7 @@ public class BasicEnemy : MonoBehaviour
             }
         }
     }
+
 
     private void Update()
     {
