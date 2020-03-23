@@ -28,6 +28,10 @@ public class BasicEnemy : MonoBehaviour
                         PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage);
                     }
                 }
+                else
+                {
+                    PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage);
+                }
             }
         }
     }
