@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     private Vector2 heartsPos;
     private readonly Vector2 START_HEART_POS = new Vector2(-50, -50);
 
+
     private void Start()
     {
         DrawUI();
@@ -62,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
     /// </summary>
     private void KillPlayer()
     {
-        // TODO
+        GameOver.EndGame();
     }
 
     /// <summary>
