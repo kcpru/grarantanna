@@ -17,13 +17,13 @@ public class PlayerHealth : MonoBehaviour
 
     public bool Invincible { get; private set; } = false;
     public int CurrentHealth { get; private set; } = 10;
+    public bool IsAlive { get; private set; } = true;
 
     private int invincibilityFramesCounter;
 
     private List<GameObject> hearts = new List<GameObject>();
     private Vector2 heartsPos;
     private readonly Vector2 START_HEART_POS = new Vector2(-50, -50);
-
 
     private void Start()
     {
@@ -33,6 +33,9 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         if (CurrentHealth <= 0)
+            CurrentHealth = 0;
+
+        if (CurrentHealth <= 0 && IsAlive)
         {
             CurrentHealth = 0;
             KillPlayer();
@@ -63,7 +66,8 @@ public class PlayerHealth : MonoBehaviour
     /// </summary>
     private void KillPlayer()
     {
-        GameOver.EndGame();
+        IsAlive = false;
+        GetComponent<PlayerController>().Death();
     }
 
     /// <summary>

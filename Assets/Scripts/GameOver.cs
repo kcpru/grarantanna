@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
-{
-    
+{  
     public static GameObject DeathScreen {get; private set; }
-    //Has to be done like this because unity doesn't allow you to find inactive objects
 
     private void Awake() 
     {
@@ -27,7 +23,7 @@ public class GameOver : MonoBehaviour
 
     public void OnMenuButtonPress() 
     {
-        //lol no menu
+        SceneManager.LoadScene(0);
     }
 
 }

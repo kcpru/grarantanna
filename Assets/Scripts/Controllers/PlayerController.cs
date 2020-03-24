@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// Main class to hold player movement.
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 1f;
     public float runSpeed = 2f;
     public bool canRun = true;
+    public bool canMove = true;
 
     [Header("Jumping")]
     public float jumpForce = 5f;
@@ -40,9 +42,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CheckGround();
-        SetDirection();
-        AnimationsController();
+        if (canMove)
+        {
+            CheckGround();
+            SetDirection();
+            AnimationsController();
+        }
 
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
@@ -78,6 +83,29 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.AngleAxis(lastAngle, Vector3.up);
         }
+    }
+
+    /// <summary>
+    /// Triggers when player gets hit by enemy.
+    /// </summary>
+    public void GetHit() => anim.SetTrigger("getHit");
+
+    public void Death ()
+    {
+        anim.enabled = false;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+        rb.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
+        col.enabled = false;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().enabled = false;
+        canMove = false;
+        StartCoroutine(WaitForGameOver());
+    }
+
+    private IEnumerator WaitForGameOver ()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        GameOver.EndGame();
     }
 
     /// <summary>
@@ -122,6 +150,7 @@ public class PlayerController : MonoBehaviour
     {
         CurrentSpeed = isSprint && canRun ? runSpeed : walkSpeed;
         CurrentSpeed *= !IsGrounded ? controlInAirMultiplier : 1f;
+        CurrentSpeed *= canMove ? 1f : 0f;
         rb.velocity = new Vector2(horizontalMove * CurrentSpeed, rb.velocity.y);
     }
 
