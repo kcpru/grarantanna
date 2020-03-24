@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     private void CheckGround ()
     {
         Vector2 dir = new Vector2(0, -1);
-        float length = 0.05f;
+        float length = 0.08f;
 
         if (!IsGrounded && 
             Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.1f, groundLayer))
