@@ -48,6 +48,6 @@ public class EnemyController : MonoBehaviour
     private void SetDirection ()
     {
         float angle = Mathf.Atan2(0, newPos == startPos ? -1 : 1) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
     }
 }
