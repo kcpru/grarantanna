@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump ()
     {
+        rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, 1) * jumpForce, ForceMode2D.Impulse);
         anim.SetTrigger("jump");
         anim.SetBool("land", false);
