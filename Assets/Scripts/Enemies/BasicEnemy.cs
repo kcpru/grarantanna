@@ -13,9 +13,24 @@ public class BasicEnemy : MonoBehaviour
     [Header("Damage")]
     public int damage = 2;
 
-
     void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.collider.CompareTag("Player"))
+        {
+            foreach (ContactPoint2D point in col.contacts)
+            {
+                if (point.normal.y < 0)
+                {
+                    if(!canBouncePlayer)
+                        PlayerController.CurrentPlayer.GetComponent<PlayerController>().GetHit();
+                }
+                else
+                {
+                    PlayerController.CurrentPlayer.GetComponent<PlayerController>().GetHit();
+                }
+            }
+        }
+    
         EveryCollision(col);
     }
     
@@ -50,7 +65,6 @@ public class BasicEnemy : MonoBehaviour
             }
         }
     }
-
 
     private void Update()
     {
