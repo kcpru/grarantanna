@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D col;
+    private Animator anim;
     
     public float CurrentSpeed { get; private set; }
     public bool IsGrounded { get; private set; }
@@ -34,12 +35,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         CheckGround();
         SetDirection();
+        AnimationsController();
 
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
@@ -56,6 +59,8 @@ public class PlayerController : MonoBehaviour
     private void Jump ()
     {
         rb.AddForce(new Vector2(0, 1) * jumpForce, ForceMode2D.Impulse);
+        anim.SetTrigger("jump");
+        anim.SetBool("land", false);
     }
 
     /// <summary>
@@ -67,11 +72,11 @@ public class PlayerController : MonoBehaviour
         {
             float angle = Mathf.Atan2(0, horizontalMove) * Mathf.Rad2Deg;
             lastAngle = angle;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
         }
         else
         {
-            transform.rotation = Quaternion.AngleAxis(lastAngle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(lastAngle, Vector3.up);
         }
     }
 
@@ -80,12 +85,32 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void CheckGround ()
     {
-        if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.01f, groundLayer))
+        Vector2 dir = new Vector2(0, -1);
+        float length = 0.05f;
+
+        if (!IsGrounded && 
+            Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.1f, groundLayer))
+        {
+            anim.SetBool("land", true);
+        }
+
+        RaycastHit2D hit1 = 
+            Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), dir, length, groundLayer);
+
+        RaycastHit2D hit2 =
+            Physics2D.Raycast(new Vector2(transform.position.x - (transform.localScale.x / 4), transform.position.y - (transform.localScale.y / 2)), dir, length, groundLayer);
+
+        RaycastHit2D hit3 =
+            Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 4), transform.position.y - (transform.localScale.y / 2)), dir, length, groundLayer);
+
+        if (hit1 || hit2 || hit3)
         {
             IsGrounded = true;
+            anim.SetBool("isGrounded", true);
         }
         else
         {
+            anim.SetBool("isGrounded", false);
             IsGrounded = false;
         }
     }
@@ -98,5 +123,27 @@ public class PlayerController : MonoBehaviour
         CurrentSpeed = isSprint && canRun ? runSpeed : walkSpeed;
         CurrentSpeed *= !IsGrounded ? controlInAirMultiplier : 1f;
         rb.velocity = new Vector2(horizontalMove * CurrentSpeed, rb.velocity.y);
+    }
+
+    private void AnimationsController ()
+    {
+        if (horizontalMove > 0.2f || horizontalMove < -0.2f)
+        {
+            if (CurrentSpeed == walkSpeed)
+            {
+                anim.SetBool("sprint", false);
+                anim.SetBool("walk", true);
+            }
+            else if (CurrentSpeed == runSpeed)
+            {
+                anim.SetBool("sprint", true);
+                anim.SetBool("walk", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("sprint", false);
+            anim.SetBool("walk", false);
+        }
     }
 }
