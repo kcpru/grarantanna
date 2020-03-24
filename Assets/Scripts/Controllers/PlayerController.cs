@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool canJump = true;
     [Range(0f, 1f)] public float controlInAirMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
+
+    [Header("Combat")]
+    public int damage = 2;
     
     private float horizontalMove;
     private float lastAngle = 0f;

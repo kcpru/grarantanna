@@ -62,6 +62,20 @@ public class PlayerHealth : MonoBehaviour
     }
 
     /// <summary>
+    /// Increases player's health by given value.
+    /// </summary>
+    /// <param name="health"></param>
+    public void AddHealth (int health)
+    {
+        if (CurrentHealth + health > maxHealth)
+            CurrentHealth = maxHealth;
+        else
+            CurrentHealth += health;
+
+        DrawUI();
+    }
+
+    /// <summary>
     /// Called when the player dies
     /// </summary>
     private void KillPlayer()
