@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool canJump = true;
     [Range(0f, 1f)] public float controlInAirMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
-    public int doubleJumps = 0;
+    public float doubleJumpTime = 0f;
 
     [Header("Combat")]
     public int damage = 2;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalMove;
     private float lastAngle = 0f;
     private bool isSprint = false;
+    private bool doubleJumped = false;
 
     private Rigidbody2D rb;
     private Collider2D col;
@@ -55,21 +56,27 @@ public class PlayerController : MonoBehaviour
             SetDirection();
             AnimationsController();
         }
+        if(IsGrounded) 
+        {
+            doubleJumped = false;
+        }
 
-        jelliesCount.text = doubleJumps.ToString();
+        if(doubleJumpTime > 0)
+        {
+            doubleJumpTime -= Time.deltaTime;
+        }
+
+        jelliesCount.text = System.Math.Round(doubleJumpTime).ToString();
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded || doubleJumps > 0) && canJump && canMove)
+        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded || (doubleJumpTime > 0 && !doubleJumped)) && canJump && canMove)
         {
-            if (!IsGrounded)
-                doubleJumps--;
-
             Jump();
         }
     }
 
-    public void AddDoubleJump(int count) => doubleJumps += count;
+    public void AddDoubleJumpTime(float seconds) => doubleJumpTime += seconds;
 
     /// <summary>
     /// Basic jumping.
