@@ -17,9 +17,13 @@ public class PlayerController : MonoBehaviour
     public bool canJump = true;
     [Range(0f, 1f)] public float controlInAirMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
+    public int doubleJumps = 0;
 
     [Header("Combat")]
     public int damage = 2;
+
+    [Header("Misc")]
+    [SerializeField] private TMPro.TextMeshProUGUI jelliesCount;
     
     private float horizontalMove;
     private float lastAngle = 0f;
@@ -52,14 +56,20 @@ public class PlayerController : MonoBehaviour
             AnimationsController();
         }
 
+        jelliesCount.text = doubleJumps.ToString();
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && canJump && canMove)
+        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded || doubleJumps > 0) && canJump && canMove)
         {
+            if (!IsGrounded)
+                doubleJumps--;
+
             Jump();
         }
     }
+
+    public void AddDoubleJump(int count) => doubleJumps += count;
 
     /// <summary>
     /// Basic jumping.
