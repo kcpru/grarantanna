@@ -8,7 +8,7 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private Sprite openedDoor;
     [SerializeField] private GameObject keyIcon;
 
-    public static bool HasKey { get; private set; }
+    public bool HasKey { get; private set; }
     private bool canEnter = false;
 
     public void GetKey ()

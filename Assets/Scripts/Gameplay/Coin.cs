@@ -7,6 +7,7 @@ public class Coin : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             CoinsCollector.Collector.CollectCoin();
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.COIN_SOUND);
             Destroy(gameObject);
         }
     }

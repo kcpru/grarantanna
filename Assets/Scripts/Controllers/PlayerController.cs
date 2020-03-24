@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && canJump)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && canJump && canMove)
         {
             Jump();
         }

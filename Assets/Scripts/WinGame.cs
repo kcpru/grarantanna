@@ -11,7 +11,7 @@ public class WinGame : MonoBehaviour
         WinScreen.SetActive(false);
     }
 
-    public static void Win() //Should probably be defined on the deathscren object but I'm tired
+    public static void Win()
     {
         WinScreen.SetActive(true);
     }
