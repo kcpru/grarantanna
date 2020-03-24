@@ -87,9 +87,9 @@ public class PlayerHealth : MonoBehaviour
     /// <summary>
     /// Damages the player without ignoring the invincibility frames(you can change the health directly if you want to bypass invincibility frames)
     /// </summary>
-    public void DamagePlayer(int amount)
+    public void DamagePlayer(int amount, bool ignoreInvicibility = false)
     {
-        if(!Invincible)
+        if(!Invincible || ignoreInvicibility)
         {
             if (CurrentHealth - amount <= 0)
                 CurrentHealth = 0;

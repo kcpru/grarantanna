@@ -9,6 +9,8 @@ public class BasicEnemy : MonoBehaviour
     public int health = 2;
     public bool killable = true;
     public bool canBouncePlayer = true;
+    public float bounceForce = 30f;
+    public bool ignoreInvicibility = false;
 
     [Header("Damage")]
     public int damage = 2;
@@ -52,15 +54,15 @@ public class BasicEnemy : MonoBehaviour
                 {
                     Rigidbody2D rb = PlayerController.CurrentPlayer.GetComponent<Rigidbody2D>(); 
                     rb.velocity = new Vector2(0, 0);
-                    rb.AddForce(new Vector2(0, 1) * 30f, ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(0, 1) * bounceForce, ForceMode2D.Impulse);
                     if(!canBouncePlayer)
                     {
-                        PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage);
+                        PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage, ignoreInvicibility);
                     }
                 }
                 else
                 {
-                    PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage);
+                    PlayerController.CurrentPlayer.GetComponent<PlayerHealth>().DamagePlayer(damage, ignoreInvicibility);
                 }
             }
         }
