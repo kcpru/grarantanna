@@ -10,6 +10,7 @@ public class Heart : MonoBehaviour
 
             if(playerHealth.CurrentHealth < playerHealth.maxHealth)
             {
+                SoundsManager.CurrentManager.PlaySound(SoundsManager.HEART_SOUND);
                 playerHealth.AddHealth(2);
                 Destroy(gameObject);
             }
