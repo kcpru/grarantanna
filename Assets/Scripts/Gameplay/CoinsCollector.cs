@@ -7,6 +7,7 @@ public class CoinsCollector : MonoBehaviour
     public int coinsToCollect = 3;
     [Space]
     [SerializeField] private Txt coinsUI;
+    [SerializeField] private Txt finalCoinsUI;
 
     public static CoinsCollector Collector { get; private set; }
 
@@ -14,6 +15,7 @@ public class CoinsCollector : MonoBehaviour
     {
         Collector = this;
         coinsUI.text = "0/" + coinsToCollect.ToString();
+        finalCoinsUI.text = "0/" + coinsToCollect.ToString();
     }
 
     public void CollectCoin ()
@@ -22,6 +24,7 @@ public class CoinsCollector : MonoBehaviour
         {
             currentCoinsCount++;
             coinsUI.text = currentCoinsCount.ToString() + "/" + coinsToCollect.ToString();
+            finalCoinsUI.text = currentCoinsCount.ToString() + "/" + coinsToCollect.ToString();
         }
     }
 }

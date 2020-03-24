@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class DoorManager : MonoBehaviour
 {
@@ -26,8 +27,15 @@ public class DoorManager : MonoBehaviour
                 PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = false;
                 PlayerController.CurrentPlayer.GetComponent<Animator>().Play("Win");
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().Win();
+                StartCoroutine(WaitForWin());
             }
         }
+    }
+
+    private IEnumerator WaitForWin ()
+    {
+        yield return new WaitForSecondsRealtime(2.5f);
+        WinGame.Win();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) => canEnter = true;
