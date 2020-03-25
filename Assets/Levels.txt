@@ -1,0 +1,36 @@
+level 1:
+Dla chc¹cego nic trudnego
+coinsy do odblokowania: 0
+coinsy do zdobycia: 1
+
+level 2:
+Gdyby kózka nie skaka³a, toby nó¿ki nie z³ama³a
+coinsy do odblokowania: 1
+coinsy do zdobycia: 5
+
+level 3:
+Mokry deszczu siê nie boi
+coinsy do odblokowania: 5
+coinsy do zdobycia: 4
+
+level 4:
+Komu w droge temu czas
+coinsy do odblokowania: 7
+coinsy do zdobycia: 3
+
+<<<<<<< HEAD
+level 6:
+Komu w droge temu czas
+coinsy do odblokowania: 9
+coinsy do zdobycia: 5
+=======
+level 5:
+Gdy si¿ cz¿owiek ¿pieszy to si¿ diabe¿ cieszy
+coinsy do odblokowania: 9
+coinsy do zdobycia: 3
+
+level 7:
+Keep your friends close and your enemies closer
+coinsy do odblokowania: 13
+coinsy do zdobycia: 2
+>>>>>>> c1ae2abac68702702da60b0491977cfed1ab8e2a
