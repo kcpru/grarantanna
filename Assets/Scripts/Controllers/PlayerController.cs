@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D col;
     private Animator anim;
     
+    public bool IsCarryingObject {get; private set;}
     public float CurrentSpeed { get; private set; }
     public bool IsGrounded { get; private set; }
 
@@ -81,10 +82,11 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        if(Input.GetKeyDown(KeyCode.E)) 
+        if(Input.GetKeyUp(KeyCode.E) && IsCarryingObject) 
         {   
-          // DropBox();
+          DropBox();
         }  
+        IsCarryingObject = (carryingBox != null);
     }
 
     public void AddDoubleJumpTime(float seconds) => doubleJumpTime += seconds;
@@ -190,7 +192,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        CurrentSpeed = isSprint && canRun ? runSpeed : walkSpeed;
+        CurrentSpeed = isSprint && canRun && !IsCarryingObject ? runSpeed : walkSpeed;
         CurrentSpeed *= !IsGrounded ? controlInAirMultiplier : 1f;
         CurrentSpeed *= canMove ? 1f : 0f;
         rb.velocity = new Vector2(horizontalMove * CurrentSpeed, rb.velocity.y);
