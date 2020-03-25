@@ -55,9 +55,10 @@ public class PlayerController : MonoBehaviour
 
             if(Input.GetKeyUp(KeyCode.Escape)) 
             {   
-                PauseScreen.Screen.GetComponent<PauseScreen>().pause();
+                PauseScreen.Screen.GetComponent<PauseScreen>().Pause();
             }  
         }
+
         if(IsGrounded) 
         {
             doubleJumped = false;

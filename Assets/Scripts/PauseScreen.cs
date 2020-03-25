@@ -14,7 +14,7 @@ public class PauseScreen : MonoBehaviour
         Screen.SetActive(false);
     }
 
-    public void pause() 
+    public void Pause() 
     {
         Screen.SetActive(true);
         savedTimeScale = Time.timeScale;
@@ -24,15 +24,19 @@ public class PauseScreen : MonoBehaviour
         pc.canMove = false;
     }
 
-    public void unpause() 
+    public void Unpause() 
     {
         Time.timeScale = savedTimeScale;
-        PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = savedCanMove;
+
+        if (PlayerController.CurrentPlayer != null)
+            PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = savedCanMove;
+
         Screen.SetActive(false);
     }
 
-    private void OnDestroy() {
-        unpause();
+    private void OnDestroy()
+    {
+        Unpause();
     }
 
     public void OnRestartButtonPress() 
@@ -45,10 +49,11 @@ public class PauseScreen : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    private void Update() {
+    private void Update()
+    {
         if(Input.GetKeyUp(KeyCode.Escape)) 
         {
-            unpause();
+            Unpause();
         }  
     }
 
