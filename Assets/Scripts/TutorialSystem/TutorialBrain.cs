@@ -96,8 +96,7 @@ public class TutorialBrain : MonoBehaviour
         tutorialUI.SetActive(true);
         string text = texts[textIndex];
 
-        if (textIndex < (texts.Length - 1))
-            textIndex++;
+        textIndex++;
 
         IsTextDisplayed = true;
         txt.text = string.Empty;
