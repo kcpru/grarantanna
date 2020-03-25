@@ -11,6 +11,7 @@ public class BasicEnemy : MonoBehaviour
     public bool canBouncePlayer = true;
     public float bounceForce = 30f;
     public bool ignoreInvicibility = false;
+    [SerializeField] private GameObject powEffect;
 
     [Header("Damage")]
     public int damage = 2;
@@ -74,6 +75,8 @@ public class BasicEnemy : MonoBehaviour
         {
             print("killed enemy");
             SoundsManager.CurrentManager.PlaySound(SoundsManager.KILLED_ENEMY_SOUND);
+            GameObject effect = Instantiate(powEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2);
             Destroy(gameObject);
         }
     }

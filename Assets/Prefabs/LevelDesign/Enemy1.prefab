@@ -102,6 +102,8 @@ MonoBehaviour:
   canBouncePlayer: 1
   bounceForce: 30
   ignoreInvicibility: 0
+  powEffect: {fileID: 7693552144552336454, guid: ba22e5e6e59497140a37f1bdd1be2be7,
+    type: 3}
   damage: 2
 --- !u!114 &2997597389029376593
 MonoBehaviour:
