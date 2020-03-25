@@ -5,6 +5,7 @@ public class SoundsManager : MonoBehaviour
     [SerializeField] private AudioSource coinSound;
     [SerializeField] private AudioSource healthSound;
     [SerializeField] private AudioSource trampolineSound;
+    [SerializeField] private AudioSource attackSound;
 
 
     public static SoundsManager CurrentManager { get; private set; }
@@ -13,6 +14,7 @@ public class SoundsManager : MonoBehaviour
     public const string COIN_SOUND = "coin";
     public const string HEART_SOUND = "heart";
     public const string TRAMPOLINE_SOUND = "trampoline";
+    public const string ATTACK_SOUND = "attack";
     #endregion
 
     private void Awake() => CurrentManager = this;
@@ -33,6 +35,9 @@ public class SoundsManager : MonoBehaviour
                 break;
             case TRAMPOLINE_SOUND:
                 trampolineSound.Play();
+                break;
+            case ATTACK_SOUND:
+                attackSound.Play();
                 break;
             default:
                 break;
