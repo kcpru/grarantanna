@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BoxPickUp : MonoBehaviour
 {
-    void OnTriggerStay2D(Collider2D col) 
+    void OnTriggerStay2D(Collider2D collision) 
     {
-        if (col.CompareTag("Object"))
+        if (collision.CompareTag("Object"))
         {
             if(Input.GetKeyUp(KeyCode.E))
             {
                 Debug.Log("a");
-                PlayerController.CurrentPlayer.GetComponent<PlayerController>().PickUpBox(col.gameObject);
+                PlayerController.CurrentPlayer.GetComponent<PlayerController>().PickUpBox(collision.gameObject);
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Object"))
+        {
+            Debug.Log("a");
+        }
+    }
+
 }

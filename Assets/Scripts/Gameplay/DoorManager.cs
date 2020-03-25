@@ -11,6 +11,12 @@ public class DoorManager : MonoBehaviour
     public bool HasKey { get; private set; }
     private bool canEnter = false;
 
+    private void Start()
+    {
+        keyIcon = GameObject.Find("KeyIcon");
+        keyIcon.SetActive(false);
+    }
+
     public void GetKey ()
     {
         HasKey = true;
