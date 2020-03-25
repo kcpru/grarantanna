@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     [Header("Combat")]
     public int damage = 2;
 
-    [Header("Misc")]
-    [SerializeField] private TMPro.TextMeshProUGUI jelliesCount;
-    
     private float horizontalMove;
     private float lastAngle = 0f;
     private bool isSprint = false;
@@ -71,7 +68,6 @@ public class PlayerController : MonoBehaviour
             doubleJumpTime -= Time.deltaTime;
         }
 
-        jelliesCount.text = System.Math.Round(doubleJumpTime).ToString();
         horizontalMove = Input.GetAxisRaw("Horizontal");
         isSprint = Input.GetKey(KeyCode.LeftShift);
 
