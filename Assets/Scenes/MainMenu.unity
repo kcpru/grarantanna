@@ -3866,7 +3866,7 @@ MonoBehaviour:
   splashes:
   - Stay inside!
   - Grarararararantanna...
-  - Unity > Godot
+  - Unity < Godot
   - chr(60) + chr(51)
   - "Powodzenia w przysz\u0142ym roku ;)"
   - Lorem ipsum dolor sit amet!
