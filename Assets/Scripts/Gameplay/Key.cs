@@ -10,6 +10,7 @@ public class Key : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.KEY_SOUND);
             doorManager.GetKey();
             Destroy(gameObject);
         }

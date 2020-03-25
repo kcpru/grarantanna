@@ -28,6 +28,7 @@ public class DoorManager : MonoBehaviour
                 PlayerController.CurrentPlayer.GetComponent<Animator>().Play("Win");
                 LevelsManager.Manager.AddCoins(CoinsCollector.Collector.currentCoinsCount);
                 LevelsManager.Manager.SaveProgress();
+                SoundsManager.CurrentManager.PlaySound(SoundsManager.DOOR_SOUND);
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetCamSize(3f);
                 StartCoroutine(WaitForWin());
             }

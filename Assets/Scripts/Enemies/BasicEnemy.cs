@@ -73,6 +73,7 @@ public class BasicEnemy : MonoBehaviour
         if(health <= 0)
         {
             print("killed enemy");
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.KILLED_ENEMY_SOUND);
             Destroy(gameObject);
         }
     }

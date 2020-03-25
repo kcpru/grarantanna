@@ -880,6 +880,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1283061996240932134, guid: 330de0de9965b3f359410a562ecdf737,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283061996240932134, guid: 330de0de9965b3f359410a562ecdf737,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7590250175185602403, guid: 330de0de9965b3f359410a562ecdf737,
         type: 3}
       propertyPath: m_Name

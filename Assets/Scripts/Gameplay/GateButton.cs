@@ -32,6 +32,7 @@ public class GateButton : MonoBehaviour
             gate.Open();
             normal.SetActive(false);
             pressed.SetActive(true);
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.GATE_SOUND);
         }
     }
 
@@ -49,6 +50,7 @@ public class GateButton : MonoBehaviour
             gate.Close();
             normal.SetActive(true);
             pressed.SetActive(false);
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.GATE_SOUND);
         }
     }
 }
