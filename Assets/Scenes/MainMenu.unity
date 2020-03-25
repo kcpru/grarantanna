@@ -4429,8 +4429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 346.29996, y: -2.8999996}
-  m_SizeDelta: {x: 656.2, y: 27.89}
+  m_AnchoredPosition: {x: 377.1, y: -2.8999996}
+  m_SizeDelta: {x: 717.8, y: 27.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555565680
 MonoBehaviour:
@@ -4450,7 +4450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poziom 2: Nie wiem'
+  m_text: "Poziom 2: Gdyby k\xF3zka nie skaka\u0142a to by n\xF3\u017Cki nie z\u0142ama\u0142a"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac72f9f5453dcbe41819c964986e7157, type: 2}
   m_sharedMaterial: {fileID: -5092259373227018992, guid: ac72f9f5453dcbe41819c964986e7157,
@@ -4479,8 +4479,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4520,10 +4520,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1555565680}
-    characterCount: 18
+    characterCount: 57
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 10
+    wordCount: 11
     linkCount: 0
     lineCount: 1
     pageCount: 1
