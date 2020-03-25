@@ -73,8 +73,6 @@ public class BasicEnemy : MonoBehaviour
     {
         if(health <= 0)
         {
-            print("killed enemy");
-            SoundsManager.CurrentManager.PlaySound(SoundsManager.KILLED_ENEMY_SOUND);
             GameObject effect = Instantiate(powEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2);
             Destroy(gameObject);
@@ -89,6 +87,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (killable)
         {
+            SoundsManager.CurrentManager.PlaySound(SoundsManager.KILLED_ENEMY_SOUND);
             health -= damage;
         }
     }
