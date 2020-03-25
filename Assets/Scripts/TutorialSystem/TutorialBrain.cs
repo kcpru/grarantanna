@@ -9,6 +9,8 @@ public class TutorialBrain : MonoBehaviour
     [SerializeField] private float delayEachLetter = 0.05f;
 
     private PlayerController playerController;
+    private WeaponManager weaponManager;
+
     public static TutorialBrain CurrentTutorial { get; private set; }
 
     public bool IsTextDisplayed { get; private set; } = false;
@@ -30,6 +32,7 @@ public class TutorialBrain : MonoBehaviour
     private void Start()
     {
         playerController = PlayerController.CurrentPlayer.GetComponent<PlayerController>();
+        weaponManager = playerController.GetComponent<WeaponManager>();
         StartCoroutine(Begin());
     }
 
@@ -50,6 +53,7 @@ public class TutorialBrain : MonoBehaviour
                     tutorialUI.SetActive(false);
                     IsTextDisplayed = false;
                     playerController.canMove = true;
+                    weaponManager.canPlayerHit = true;
                     txt.text = string.Empty;
                     PauseScreen.PauseMenu.canPause = true;
                 }
@@ -60,6 +64,7 @@ public class TutorialBrain : MonoBehaviour
     private IEnumerator Begin ()
     {
         playerController.canMove = false;
+        weaponManager.canPlayerHit = false;
         playerController.GetComponent<Animator>().SetBool("isGrounded", true);
         playerController.GetComponent<Animator>().SetBool("land", true);
         yield return new WaitForSecondsRealtime(2);
@@ -82,6 +87,7 @@ public class TutorialBrain : MonoBehaviour
         PauseScreen.PauseMenu.canPause = false;
 
         playerController.canMove = false;
+        weaponManager.canPlayerHit = false;
         playerController.GetComponent<Animator>().SetBool("isGrounded", true);
         playerController.GetComponent<Animator>().SetBool("land", true);
         playerController.GetComponent<Animator>().SetBool("walk", false);

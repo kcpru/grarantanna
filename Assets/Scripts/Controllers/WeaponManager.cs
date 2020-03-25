@@ -3,6 +3,7 @@
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private Collider2D swordCol;
+    public bool canPlayerHit = true;
     private Animator anim;
     private bool canHit = true;
 
@@ -13,7 +14,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) && canHit)
+        if((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) && canHit && canPlayerHit)
         {
             Hit();
         }
@@ -24,7 +25,6 @@ public class WeaponManager : MonoBehaviour
         canHit = false;
         anim.SetTrigger("hit");
         SoundsManager.CurrentManager.PlaySound(SoundsManager.ATTACK_SOUND);
-
     }
 
     public void ActivateCollider ()
