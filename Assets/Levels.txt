@@ -10,25 +10,25 @@ coinsy do zdobycia: 5
 
 level 3:
 Mokry deszczu siê nie boi
-coinsy do odblokowania: 5
+coinsy do odblokowania: 6
 coinsy do zdobycia: 4
 
 level 4:
 Komu w droge temu czas
-coinsy do odblokowania: 7
+coinsy do odblokowania: 9
 coinsy do zdobycia: 3
 
 level 5:
 Gdy si¿ cz¿owiek ¿pieszy to si¿ diabe¿ cieszy
-coinsy do odblokowania: 9
+coinsy do odblokowania: 11
 coinsy do zdobycia: 3
 
 level 6:
-Komu w droge temu czas
-coinsy do odblokowania: 9
+Biednemu zawsze wiatr w oczy
+coinsy do odblokowania: 14
 coinsy do zdobycia: 5
 
 level 7:
 Keep your friends close and your enemies closer
-coinsy do odblokowania: 13
+coinsy do odblokowania: 21
 coinsy do zdobycia: 2
