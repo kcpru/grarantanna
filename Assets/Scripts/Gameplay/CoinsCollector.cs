@@ -14,7 +14,8 @@ public class CoinsCollector : MonoBehaviour
     private void Awake()
     {
         Collector = this;
-        coinsToCollect = FindObjectsOfType<Coin>().Length;
+        var coins = FindObjectsOfType<Coin>();
+        coinsToCollect = coins != null ? coins.Length : 0;
         coinsUI.text = "0/" + coinsToCollect.ToString();
         finalCoinsUI.text = "0/" + coinsToCollect.ToString();
     }

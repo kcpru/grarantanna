@@ -1139,7 +1139,7 @@ MonoBehaviour:
   maxHealth: 10
   invincibilityFrames: 50
   heartGO: {fileID: 4433266989942649560, guid: cf25abc90d960fb419669dc8fe6260a6, type: 3}
-  heartsRoot: {fileID: 0}
+  heartsRoot: {fileID: 1945694042}
   fullHeart: {fileID: 21300000, guid: c9666f1e353cd034788e346701235a81, type: 3}
   halfHeart: {fileID: 21300000, guid: a1140903459e31d4ab99d1977ac29071, type: 3}
   emptyHeart: {fileID: 21300000, guid: ba22d660b5d143840a3f05eed9a33335, type: 3}
@@ -1366,6 +1366,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1283061996240932134, guid: 330de0de9965b3f359410a562ecdf737,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283061996240932134, guid: 330de0de9965b3f359410a562ecdf737,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7590250175185602403, guid: 330de0de9965b3f359410a562ecdf737,
         type: 3}
       propertyPath: m_Name
@@ -1565,7 +1575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCoinsCount: 0
   coinsToCollect: 3
-  coinsUI: {fileID: 0}
+  coinsUI: {fileID: 1529796723}
   finalCoinsUI: {fileID: 944695709}
 --- !u!1 &1065220230
 GameObject:
@@ -2163,6 +2173,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   parallaxEffect: 0.4
+--- !u!114 &1529796723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1283061995883997840, guid: 330de0de9965b3f359410a562ecdf737,
+    type: 3}
+  m_PrefabInstance: {fileID: 944695708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555540764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,6 +2327,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1945694042 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7590250174680858580, guid: 330de0de9965b3f359410a562ecdf737,
+    type: 3}
+  m_PrefabInstance: {fileID: 944695708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1981696526
 GameObject:
   m_ObjectHideFlags: 0

@@ -1133,7 +1133,7 @@ MonoBehaviour:
   maxHealth: 10
   invincibilityFrames: 50
   heartGO: {fileID: 4433266989942649560, guid: cf25abc90d960fb419669dc8fe6260a6, type: 3}
-  heartsRoot: {fileID: 0}
+  heartsRoot: {fileID: 1340951901}
   fullHeart: {fileID: 21300000, guid: c9666f1e353cd034788e346701235a81, type: 3}
   halfHeart: {fileID: 21300000, guid: a1140903459e31d4ab99d1977ac29071, type: 3}
   emptyHeart: {fileID: 21300000, guid: ba22d660b5d143840a3f05eed9a33335, type: 3}
@@ -1741,6 +1741,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1340951901 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7590250174680858580, guid: 330de0de9965b3f359410a562ecdf737,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726967219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1388340949
 PrefabInstance:
   m_ObjectHideFlags: 0
