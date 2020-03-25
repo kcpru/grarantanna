@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float lastAngle = 0f;
     private bool isSprint = false;
     private bool doubleJumped = false;
+    private GameObject carryingBox;
+
 
     private Rigidbody2D rb;
     private Collider2D col;
@@ -79,6 +81,10 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        if(Input.GetKeyDown(KeyCode.E)) 
+        {   
+          // DropBox();
+        }  
     }
 
     public void AddDoubleJumpTime(float seconds) => doubleJumpTime += seconds;
@@ -88,6 +94,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump ()
     {
+        DropBox();
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, 1) * jumpForce, ForceMode2D.Impulse);
         anim.SetTrigger("jump");
@@ -114,10 +121,15 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Triggers when player gets hit by enemy.
     /// </summary>
-    public void GetHit() => anim.SetTrigger("getHit");
+    public void GetHit() 
+    {
+        DropBox();
+        anim.SetTrigger("getHit");
+    }
 
     public void Death ()
     {
+        DropBox();
         anim.enabled = false;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
@@ -205,4 +217,20 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("walk", false);
         }
     }
+
+    public void DropBox() 
+    {
+        if(carryingBox != null) 
+        {
+            carryingBox.GetComponent<Rigidbody2D>().transform.parent = null;
+            carryingBox = null;
+        }
+    }
+    public void PickUpBox(GameObject box) 
+    {
+        DropBox();
+        box.GetComponent<Rigidbody2D>().transform.parent = rb.transform;
+        carryingBox = box;
+    }
+    
 }
