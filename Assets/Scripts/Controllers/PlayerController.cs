@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 1f)] public float controlInAirMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
     public float doubleJumpTime = 0f;
+    [Space]
+    public bool jumpingTakesDamage = false;
+    public int fallDamage = 2;
 
     [Header("Combat")]
     public int damage = 2;
@@ -144,6 +147,7 @@ public class PlayerController : MonoBehaviour
             Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.1f, groundLayer))
         {
             anim.SetBool("land", true);
+            GetComponent<PlayerHealth>().DamagePlayer(fallDamage);
         }
 
         RaycastHit2D hit1 = 
