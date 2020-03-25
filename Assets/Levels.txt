@@ -17,3 +17,13 @@ level 4:
 Komu w droge temu czas
 coinsy do odblokowania: 6
 coinsy do zdobycia: 3
+
+level 5:
+Komu w droge temu czas
+coinsy do odblokowania: 9
+coinsy do zdobycia: 4
+
+level 6:
+Biednemu zawsze wiatr w oczy
+coinsy do odblokowania: 12
+coinsy do zdobycia: 5
