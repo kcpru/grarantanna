@@ -1,7 +1,7 @@
 level 1:
 Dla chc¹cego nic trudnego
 coinsy do odblokowania: 0
-coinsy do zdobycia: 0
+coinsy do zdobycia: 1
 
 level 2:
 Gdyby kózka nie skaka³a, toby nó¿ki nie z³ama³a
@@ -10,20 +10,10 @@ coinsy do zdobycia: 5
 
 level 3:
 Mokry deszczu siê nie boi
-coinsy do odblokowania: 3
+coinsy do odblokowania: 5
 coinsy do zdobycia: 3
 
 level 4:
 Komu w droge temu czas
-coinsy do odblokowania: 6
+coinsy do odblokowania: 7
 coinsy do zdobycia: 3
-
-level 5:
-Komu w droge temu czas
-coinsy do odblokowania: 9
-coinsy do zdobycia: 4
-
-level 6:
-Biednemu zawsze wiatr w oczy
-coinsy do odblokowania: 12
-coinsy do zdobycia: 5
