@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class WinGame : MonoBehaviour
 {
-    [SerializeField] private Button nextLevelBtn;
     public static GameObject WinScreen { get; private set; }
     public static WinGame CurrentScreen;
 
@@ -17,11 +15,6 @@ public class WinGame : MonoBehaviour
 
     public void Win()
     {
-        if(!LevelsManager.Manager.IsLevelUnlocked(SceneManager.GetActiveScene().buildIndex + 1))
-        {
-            nextLevelBtn.interactable = false;
-        }
-
         WinScreen.SetActive(true);
     }
 
