@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DoorManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class DoorManager : MonoBehaviour
                 door.sprite = openedDoor;
                 PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = false;
                 PlayerController.CurrentPlayer.GetComponent<Animator>().Play("Win");
-                LevelsManager.Manager.AddCoins(CoinsCollector.Collector.currentCoinsCount);
+                LevelsManager.Manager.AddCoins(CoinsCollector.Collector.currentCoinsCount, SceneManager.GetActiveScene().buildIndex);
                 LevelsManager.Manager.SaveProgress();
                 SoundsManager.CurrentManager.PlaySound(SoundsManager.DOOR_SOUND);
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetCamSize(3f);
@@ -48,7 +49,7 @@ public class DoorManager : MonoBehaviour
     private IEnumerator WaitForWin ()
     {
         yield return new WaitForSecondsRealtime(2.5f);
-        WinGame.Win();
+        WinGame.CurrentScreen.Win();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) => canEnter = true;
