@@ -101,6 +101,9 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(new Vector2(0, 1) * jumpForce, ForceMode2D.Impulse);
         anim.SetTrigger("jump");
         anim.SetBool("land", false);
+
+        if (jumpingTakesDamage)
+            GetComponent<PlayerHealth>().DamagePlayer(fallDamage);
     }
 
     /// <summary>
@@ -161,9 +164,6 @@ public class PlayerController : MonoBehaviour
             Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.1f, groundLayer))
         {
             anim.SetBool("land", true);
-
-            if (jumpingTakesDamage)
-                GetComponent<PlayerHealth>().DamagePlayer(fallDamage);
         }
 
         RaycastHit2D hit1 = 
@@ -224,14 +224,15 @@ public class PlayerController : MonoBehaviour
     {
         if(carryingBox != null) 
         {
-            carryingBox.GetComponent<Rigidbody2D>().transform.parent = null;
+            carryingBox.transform.parent = null;
             carryingBox = null;
         }
     }
+
     public void PickUpBox(GameObject box) 
     {
         DropBox();
-        box.GetComponent<Rigidbody2D>().transform.parent = rb.transform;
+        box.transform.parent = transform;
         carryingBox = box;
     }
     
