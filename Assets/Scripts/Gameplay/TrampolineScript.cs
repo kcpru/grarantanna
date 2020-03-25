@@ -18,6 +18,8 @@ public class TrampolineScript : MonoBehaviour
                     Rigidbody2D rb = PlayerController.CurrentPlayer.GetComponent<Rigidbody2D>(); 
                     rb.velocity = new Vector2(0, 0);
                     rb.AddForce(new Vector2(0, 1) * bounceForce, ForceMode2D.Impulse);
+                    SoundsManager.CurrentManager.PlaySound(SoundsManager.TRAMPOLINE_SOUND);
+
                 }
             }
         }
