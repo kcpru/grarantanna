@@ -6,7 +6,6 @@ public class BoxPickUp : MonoBehaviour
 {
     void OnTriggerStay2D(Collider2D collision) 
     {
-        Debug.Log("a");
         if (collision.CompareTag("Object"))
         {
             if(Input.GetKeyUp(KeyCode.E))
