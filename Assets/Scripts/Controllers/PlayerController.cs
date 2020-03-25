@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
             CheckGround();
             SetDirection();
             AnimationsController();
+
+            if(Input.GetKeyUp(KeyCode.Escape)) 
+            {   
+                PauseScreen.Screen.GetComponent<PauseScreen>().pause();
+            }  
         }
         if(IsGrounded) 
         {
