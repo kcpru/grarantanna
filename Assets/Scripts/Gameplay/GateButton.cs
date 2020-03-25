@@ -7,6 +7,11 @@ public class GateButton : MonoBehaviour
     private GameObject normal;
     private GameObject pressed;
 
+    private bool isOpened = false;
+
+    private bool isPlayer = false;
+    private bool isObject = false;
+
     private void Start()
     {
         normal = transform.GetChild(0).gameObject;
@@ -17,6 +22,13 @@ public class GateButton : MonoBehaviour
     {
         if(collision.CompareTag("Player") || collision.CompareTag("Object"))
         {
+            if (collision.CompareTag("Player"))
+                isPlayer = true;
+
+            if (collision.CompareTag("Object"))
+                isObject = true;
+
+            isOpened = true;
             gate.Open();
             normal.SetActive(false);
             pressed.SetActive(true);
@@ -25,8 +37,18 @@ public class GateButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        gate.Close();
-        normal.SetActive(true);
-        pressed.SetActive(false);
+        if (collision.CompareTag("Player"))
+            isPlayer = false;
+
+        if (collision.CompareTag("Object"))
+            isObject = false;
+
+        if (!isPlayer && !isObject)
+        {
+            isOpened = false;
+            gate.Close();
+            normal.SetActive(true);
+            pressed.SetActive(false);
+        }
     }
 }
