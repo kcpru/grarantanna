@@ -13,7 +13,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && canHit)
+        if((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) && canHit)
         {
             Hit();
         }

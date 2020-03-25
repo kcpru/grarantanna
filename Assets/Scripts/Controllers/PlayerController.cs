@@ -70,9 +70,9 @@ public class PlayerController : MonoBehaviour
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal");
-        isSprint = Input.GetKey(KeyCode.LeftShift);
+        isSprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded || (doubleJumpTime > 0 && !doubleJumped)) && canJump && canMove)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && (IsGrounded || (doubleJumpTime > 0 && !doubleJumped)) && canJump && canMove)
         {
             Jump();
         }

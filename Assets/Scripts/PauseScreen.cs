@@ -2,12 +2,16 @@
 using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
-{  
-    public static GameObject Screen {get; private set; }
+{
+    public bool canPause = true;
+    public static GameObject Screen { get; private set; }
+    public static PauseScreen PauseMenu { get; private set; }
 
     private float savedTimeScale = 1f;
     private bool savedCanMove = true;
-    
+
+    private void Awake() => PauseMenu = this;
+
     private void Start() 
     {
         Screen = gameObject;
@@ -16,12 +20,15 @@ public class PauseScreen : MonoBehaviour
 
     public void Pause() 
     {
-        Screen.SetActive(true);
-        savedTimeScale = Time.timeScale;
-        Time.timeScale = 0;
-        PlayerController pc = PlayerController.CurrentPlayer.GetComponent<PlayerController>();
-        savedCanMove = pc.canMove;
-        pc.canMove = false;
+        if (canPause)
+        {
+            Screen.SetActive(true);
+            savedTimeScale = Time.timeScale;
+            Time.timeScale = 0;
+            PlayerController pc = PlayerController.CurrentPlayer.GetComponent<PlayerController>();
+            savedCanMove = pc.canMove;
+            pc.canMove = false;
+        }
     }
 
     public void Unpause() 

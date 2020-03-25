@@ -26,7 +26,7 @@ public class DoorManager : MonoBehaviour
                 door.sprite = openedDoor;
                 PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = false;
                 PlayerController.CurrentPlayer.GetComponent<Animator>().Play("Win");
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().Win();
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetCamSize(3f);
                 StartCoroutine(WaitForWin());
             }
         }

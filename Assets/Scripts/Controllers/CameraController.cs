@@ -27,5 +27,5 @@ public class CameraController : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * 2f);
     }
 
-    public void Win() => targetCamSize = 3f;
+    public void SetCamSize(float size) => targetCamSize = size;
 }
