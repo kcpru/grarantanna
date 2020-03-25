@@ -1117,6 +1117,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   doubleJumpTime: 0
+  jumpingTakesDamage: 0
+  fallDamage: 2
   damage: 2
 --- !u!212 &715391029
 SpriteRenderer:
@@ -1773,7 +1775,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

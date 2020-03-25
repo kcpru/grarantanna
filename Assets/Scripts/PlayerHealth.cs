@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         CurrentHealth = maxHealth;
 
-        if (hearts == null)
+        if (heartsRoot == null)
             heartsRoot = GameObject.Find("Hearts").transform;
 
         DrawUI();

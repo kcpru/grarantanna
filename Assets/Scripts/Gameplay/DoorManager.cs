@@ -36,6 +36,10 @@ public class DoorManager : MonoBehaviour
                 LevelsManager.Manager.SaveProgress();
                 SoundsManager.CurrentManager.PlaySound(SoundsManager.DOOR_SOUND);
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetCamSize(3f);
+
+                if (FindObjectOfType<TimerLose>() != null)
+                    Destroy(FindObjectOfType<TimerLose>());
+
                 StartCoroutine(WaitForWin());
             }
         }
