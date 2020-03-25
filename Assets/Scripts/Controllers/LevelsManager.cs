@@ -20,7 +20,6 @@ public class LevelsManager : MonoBehaviour
     public string SavingPath { get; private set; }
 
     public int CoinsCount { get; private set; } = 0;
-    public int UnlockedLevelsCount { get; private set; } = 0;
 
     private void Awake()
     {
@@ -28,7 +27,6 @@ public class LevelsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SavingPath = Path.Combine(Application.dataPath, "GameSave.sav");
-        LoadProgress();
     }
 
     /// <summary>
@@ -39,7 +37,6 @@ public class LevelsManager : MonoBehaviour
         string[] textToSave = new string[]
         {
             $"coins={CoinsCount.ToString()}",
-            $"unlockedLevels={UnlockedLevelsCount.ToString()}"
         };
 
         for(int i = 0; i < textToSave.Length; i++)
@@ -69,7 +66,6 @@ public class LevelsManager : MonoBehaviour
             try
             {
                 CoinsCount = int.Parse(loadedLines[0].Remove(0, 6));
-                UnlockedLevelsCount = int.Parse(loadedLines[1].Remove(0, 15));
             }
             catch
             {

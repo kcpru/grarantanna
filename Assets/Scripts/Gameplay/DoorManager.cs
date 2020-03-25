@@ -26,6 +26,8 @@ public class DoorManager : MonoBehaviour
                 door.sprite = openedDoor;
                 PlayerController.CurrentPlayer.GetComponent<PlayerController>().canMove = false;
                 PlayerController.CurrentPlayer.GetComponent<Animator>().Play("Win");
+                LevelsManager.Manager.AddCoins(CoinsCollector.Collector.currentCoinsCount);
+                LevelsManager.Manager.SaveProgress();
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetCamSize(3f);
                 StartCoroutine(WaitForWin());
             }
