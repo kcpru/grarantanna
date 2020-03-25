@@ -17,3 +17,8 @@ level 4:
 Komu w droge temu czas
 coinsy do odblokowania: 7
 coinsy do zdobycia: 3
+
+level 6:
+Komu w droge temu czas
+coinsy do odblokowania: 9
+coinsy do zdobycia: 5
