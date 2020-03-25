@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
         anim.enabled = false;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+        rb.velocity = new Vector2(0,0);
         rb.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
         col.enabled = false;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().enabled = false;
