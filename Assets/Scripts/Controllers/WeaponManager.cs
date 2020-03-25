@@ -23,6 +23,8 @@ public class WeaponManager : MonoBehaviour
     {
         canHit = false;
         anim.SetTrigger("hit");
+        SoundsManager.CurrentManager.PlaySound(SoundsManager.ATTACK_SOUND);
+
     }
 
     public void ActivateCollider ()
