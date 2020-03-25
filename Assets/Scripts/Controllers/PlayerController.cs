@@ -147,7 +147,9 @@ public class PlayerController : MonoBehaviour
             Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), new Vector2(0, -1), 0.1f, groundLayer))
         {
             anim.SetBool("land", true);
-            GetComponent<PlayerHealth>().DamagePlayer(fallDamage);
+
+            if (jumpingTakesDamage)
+                GetComponent<PlayerHealth>().DamagePlayer(fallDamage);
         }
 
         RaycastHit2D hit1 = 

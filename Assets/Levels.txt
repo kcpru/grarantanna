@@ -7,3 +7,8 @@ level 2:
 nazwa
 coinsy do odblokowania: 0
 coinsy do zdobycia: 4
+
+level 3:
+Mokry deszczu siê nie boi
+coinsy do odblokowania: 3
+coinsy do zdobycia: 3
