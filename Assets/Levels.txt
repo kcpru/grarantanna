@@ -24,6 +24,6 @@ coinsy do odblokowania: 9
 coinsy do zdobycia: 4
 
 level 6:
-Komu w droge temu czas
+Biednemu zawsze wiatr w oczy
 coinsy do odblokowania: 12
 coinsy do zdobycia: 5
