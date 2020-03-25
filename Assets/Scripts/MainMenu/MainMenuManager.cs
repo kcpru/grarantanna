@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Txt = TMPro.TextMeshProUGUI;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject mainPage;
     [SerializeField] private GameObject levelsPage;
     [SerializeField] private GameObject creditsPage;
+
+    [Space]
+    [SerializeField] private Txt splashTxt;
+    [SerializeField] private string[] splashes;
 
     private void Start() => OpenPage("main");
 
@@ -20,6 +25,7 @@ public class MainMenuManager : MonoBehaviour
         {
             case "main":
                 mainPage.SetActive(true);
+                splashTxt.text = splashes[Random.Range(0, splashes.Length)];
                 break;
             case "levels":
                 levelsPage.SetActive(true);
