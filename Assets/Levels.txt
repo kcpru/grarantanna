@@ -1,0 +1,9 @@
+level 1:
+Dla chc¹cego nic trudnego
+coinsy do odblokowania: 0
+coinsy do zdobycia: 0
+
+level 2:
+nazwa
+coinsy do odblokowania: 0
+coinsy do zdobycia: 4
