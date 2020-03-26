@@ -36,8 +36,11 @@ public class LevelsManager : MonoBehaviour
             Manager = this;
             DontDestroyOnLoad(gameObject);
         }
-
-        SavingPath = Path.Combine(Application.dataPath, "GameSave.sav");
+        #if WINDOWS
+            SavingPath = Path.Combine(Application.dataPath, "GameSave.sav");
+        #else
+            SavingPath = Path.Combine(Application.persistentDataPath, "GameSave.sav");
+        #endif
     }
 
     private void Start()
