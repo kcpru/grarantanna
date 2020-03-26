@@ -3885,6 +3885,7 @@ MonoBehaviour:
   - :)
   - 99% bug free
   - 'BuildID: real_ostateczny_ostatni_final_rc2_build'
+  - "#zosta\u0144wdomu"
 --- !u!1 &1375615857
 GameObject:
   m_ObjectHideFlags: 0
