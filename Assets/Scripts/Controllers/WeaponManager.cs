@@ -14,7 +14,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) && canHit && canPlayerHit)
+        if((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))  && canHit && canPlayerHit)
         {
             Hit();
         }
