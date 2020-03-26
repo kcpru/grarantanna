@@ -41,6 +41,7 @@ public class LevelsManager : MonoBehaviour
         #else
             SavingPath = Path.Combine(Application.persistentDataPath, "GameSave.sav");
         #endif
+        Debug.Log(SavingPath);
     }
 
     private void Start()
@@ -86,9 +87,13 @@ public class LevelsManager : MonoBehaviour
             textToSave[i] = Convert.ToBase64String(plainTextBytes);
         }
 
-        File.WriteAllLines(SavingPath, textToSave);
+        //File.WriteAllLines(SavingPath, textToSave);
 
         List<string> toSave = new List<string>();
+        for(int i = 0; i < textToSave.Length; i++)
+        {
+            toSave.Add(textToSave[i]);
+        }
 
         for(int i = 0; i < coinsFromLevels.Count; i++)
         {
@@ -97,8 +102,8 @@ public class LevelsManager : MonoBehaviour
 
             print($"coinsFromLevels = {coinsFromLevels[i]} maxCoins = {maxCoins[i]}");
         }
-
-        File.AppendAllLines(SavingPath, toSave.ToArray());
+        
+        PlayerPrefs.SetString("SaveData", String.Join("\n",toSave));
     }
 
     /// <summary>
@@ -106,9 +111,10 @@ public class LevelsManager : MonoBehaviour
     /// </summary>
     public void LoadProgress ()
     {
-        if(File.Exists(SavingPath))
+        string loadedData = PlayerPrefs.GetString("SaveData");
+        if(loadedData != null)
         {
-            string[] loadedLines = File.ReadAllLines(SavingPath);
+            string[] loadedLines = loadedData.Split('\n');
 
             byte[] base64EncodedBytes = Convert.FromBase64String(loadedLines[0]);
             loadedLines[0] = Encoding.UTF8.GetString(base64EncodedBytes);
