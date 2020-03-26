@@ -20,11 +20,11 @@ public class TutorialBrain : MonoBehaviour
 
     private readonly string[] texts = new string[]
     {
-        "Witaj w przysłowiowej platformówce. W tej prostej grze chodzi o to, aby dostać się do drzwi. Jednak, abyś był w stanie je otworzyć, potrzebujesz zdobyć do nich klucz. Ale po koleji... Do poruszania się użyj ASD lub strzałek na klawiaturze. Aby biec szybciej, przytrzymaj lewy lub prawy Shift. Jeśli spotkasz na swojej drodze przeciwników, uderz ich mieczem za pomocą lewego lub prawego Controla.",
-        "Dobrze. Jeśli chcesz podskoczyć, naciśnij W lub Spację. Spróbuj.",
+        "Witaj w przysłowiowej platformówce! W tej prostej grze chodzi o to, aby dostać się do drzwi. Jednak, abyś był w stanie je otworzyć, potrzebujesz zdobyć do nich klucz. Ale po koleji... Do poruszania się użyj AD lub strzałek na klawiaturze. Aby biec szybciej, przytrzymaj lewy lub prawy Shift. Jeśli spotkasz na swojej drodze przeciwników, uderz ich mieczem za pomocą lewego lub prawego Controla lub klawisza Alt",
+        "Dobrze! Jeśli chcesz podskoczyć, naciśnij W lub Spację. Spróbuj.",
         "Jak widzisz poruszanie się jest bardzo proste. Teraz pora na coś bardziej zaawansowanego. W naszej grze znajduje się kilka przedmiotów, które mają za zadanie urozmaicić rozgrywkę. Stoisz własnie przed paroma z nich. Przycisk, który widzisz można aktywować stając na nim lub wpychając na niego jakiś przedmiot. Wówczas otworzy on jakąś bramę. Przedmioty możesz też podnosić stojąc przy nich i klikając E.",
         "Od przejścia pierwszego poziomu, dzieli Cie już tylko kilka kroków. Widzisz przed sobą drzwi, jednak aby je otworzyć potrzebujesz do nich klucza. Podnieś go pochodząc do niego.",
-        "Brawo! Teraz wystarczy podejść do drzwi i nacisnąć E. Gratulacje za chwile ukończysz swój pierwszy poziom w naszej grze!"
+        "Brawo! Teraz wystarczy podejść do drzwi i nacisnąć klawisz E. Gratulacje, za chwile ukończysz swój pierwszy poziom w naszej grze!"
     };
 
     private void Awake() => CurrentTutorial = this;
