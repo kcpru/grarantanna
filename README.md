@@ -1,5 +1,10 @@
 # Grarantanna - Przysłowiowy Platformer
 
+| Criteria                                                 | Rank | Score | Raw Score |
+| -------------------------------------------------------- | ---- | ----- | --------- |
+| Najoryginalniejszy pomysł - Szkoły średnie do 19 lat     | #3   | n/a   | n/a       |
+| Nagroda publiczności (Najlepsza gra według publiczności) | #8   | 3.300 | 3.300     |
+
 ## System
 
 - Windows
@@ -54,3 +59,10 @@ Od przeciwników możesz się również **odbijać** skacząc po nich!
 ## Music
 
 [Source](https://hastebin.com/orucovozay)
+
+## Screenshot
+
+![Screenshot 1](https://img.itch.zone/aW1hZ2UvNTk0OTA1LzMxNDgyMDEuanBn/original/L8fN7R.jpg)
+![Screenshot 2](https://img.itch.zone/aW1hZ2UvNTk0OTA1LzMxNDgyMDIuanBn/original/%2BKp0N%2F.jpg)
+![Screenshot 3](https://img.itch.zone/aW1hZ2UvNTk0OTA1LzMxNDgyMDMuanBn/original/bEnm9p.jpg)
+![Screenshot 4](https://img.itch.zone/aW1hZ2UvNTk0OTA1LzMxNDgyMTcucG5n/original/NI%2Fhy%2F.png)
