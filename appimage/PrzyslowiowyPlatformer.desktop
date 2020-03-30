@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Przysłowiowy Platformer
+Exec=script.sh
+Icon=UnityPlayer
+Terminal=true
+Type=Application
+Categories=Game;
