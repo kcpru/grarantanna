@@ -1,9 +1,9 @@
 # Grarantanna - Przysłowiowy Platformer
 
-| Criteria                                                 | Rank | Score | Raw Score |
-| -------------------------------------------------------- | ---- | ----- | --------- |
-| Najoryginalniejszy pomysł - Szkoły średnie do 19 lat     | #3   | n/a   | n/a       |
-| Nagroda publiczności (Najlepsza gra według publiczności) | #8   | 3.300 | 3.300     |
+| Criteria                                                                                                                                                 | Rank | Score | Raw Score |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ----- | --------- |
+| [Najoryginalniejszy pomysł - Szkoły średnie do 19 lat](https://itch.io/jam/grarantanna-game-jam/results/najoryginalniejszy-pomys-szkoy-rednie-do-19-lat) | #3   | n/a   | n/a       |
+| [Nagroda publiczności (Najlepsza gra według publiczności)](https://itch.io/jam/grarantanna-game-jam/results)                                             | #8   | 3.300 | 3.300     |
 
 ## System
 
