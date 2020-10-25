@@ -2332,12 +2332,12 @@ PrefabInstance:
     - target: {fileID: 5204921794735918123, guid: 86490ee7860a0c26d80121037bbea84c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.56
+      value: -20.38
       objectReference: {fileID: 0}
     - target: {fileID: 5204921794735918123, guid: 86490ee7860a0c26d80121037bbea84c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.78
+      value: 18.87
       objectReference: {fileID: 0}
     - target: {fileID: 5204921794735918123, guid: 86490ee7860a0c26d80121037bbea84c,
         type: 3}
@@ -5481,6 +5481,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820667380829699792, guid: 931d4d1c302305e43b33d8930d02b1c1,
+        type: 3}
+      propertyPath: isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820667380829699792, guid: 931d4d1c302305e43b33d8930d02b1c1,
+        type: 3}
+      propertyPath: blendDistance
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820667380829699792, guid: 931d4d1c302305e43b33d8930d02b1c1,
+        type: 3}
+      propertyPath: weight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931d4d1c302305e43b33d8930d02b1c1, type: 3}
